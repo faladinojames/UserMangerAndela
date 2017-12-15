@@ -1,0 +1,40 @@
+version: "3.3"
+services:
+  web:
+    image: faladinojames/usermanager
+    build: .
+    deploy:
+          replicas: 5
+          restart_policy:
+            condition: on-failure
+          resources:
+            limits:
+              cpus: "0.1"
+              memory: 50M
+    volumes:
+      - ./:/app
+    ports:
+      - "3000:3000"
+    networks:
+          - managernet
+    links:
+     - mongo
+  mongo:
+   image: mongo
+   deploy:
+         replicas: 5
+         restart_policy:
+           condition: on-failure
+         resources:
+           limits:
+             cpus: "0.1"
+             memory: 50M
+   container_name: usermanagermongo
+   volumes:
+     - ./data:/data/db
+   ports:
+      - "27018:27017"
+   networks:
+      - managernet
+networks:
+  managernet:
