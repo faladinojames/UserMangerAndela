@@ -6,12 +6,12 @@ This repository contains a simple demo API built with NodeJS.
 The API is used to manage users in a MongoDB database.
 
 # Setup
-Make Sure Docker and Docker compose have been installed.
-Install Docker https://www.docker.com/get-docker
-Install Docker compose https://docs.docker.com/compose/install/
-Make sure ports 27017 and 3000 are both free and unused.
-After installation run  ```./start_swarm.sh```
-The application should be accessible via http://localhost:3000
+* Make Sure Docker and Docker compose have been installed.
+* Install Docker https://www.docker.com/get-docker
+* Install Docker compose https://docs.docker.com/compose/install/
+* Make sure ports 27017 and 3000 are both free and unused.
+* After installation run  ```./start_swarm.sh```
+* The application should be accessible via http://localhost:3000
 
 ### API Documentation
 The API only has one endpoint which is the `/users` endpoint for saving users to the database. The endpoint works with the HTTP verbs: `POST`, `GET`, `PUT`, `DELETE`.
